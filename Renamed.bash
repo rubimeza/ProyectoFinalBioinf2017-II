@@ -2,7 +2,8 @@
 
 #Este es un script para adicionar el nombre en acrònimo de la especie a cada muestras 
 ## Se puede notar que el nombre de la especie se repite porque una secuencia corresponde al forward y la otra al reverse
-## mv <secuencia original> <acrònimo_secuencia original>
+## mv <secuencia original> <acrònimo+secuencia original>
+## mv <coloca aquí tu secuencia> <coloca tu acrónimo+secuencia original nuevamente>
 mv CACGCANXX_s6_1_MY714-MY526_SL217955.fastq.gz DISC02s2_CACGCANXX_s6_1_MY714-MY526_SL217955.fastq.gz 
 mv CACGCANXX_s6_2_MY714-MY526_SL217955.fastq.gz	DISC02s2_CACGCANXX_s6_2_MY714-MY526_SL217955.fastq.gz
 mv CACGCANXX_s6_1_MY718-MY542_SL217956.fastq.gz GERA01S1_CACGCANXX_s6_1_MY718-MY542_SL217956.fastq.gz
