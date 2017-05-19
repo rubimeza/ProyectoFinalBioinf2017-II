@@ -106,7 +106,7 @@ Para realizar el ensamble necesitas:
 1. Genoma de referencia 	
  -	`test_target_996_loci.fasta`
 2. Archivo.txt del nombre de las secuencias (para ensamblar más de una muestra)
-	- `namelist.txt`
+- `namelist.txt`
 3. Script `reads_first.py`
 
 
@@ -217,6 +217,15 @@ Debes utilizar el siguiente línea de comando para obtener el resumen de los est
 `../hybpiper_stats.py test_target_996_loci.fasta namelist.txt > test_stats_txt`Si el escript no corre debes corroborar que se ejecutable. Tienes que ir a la carpeta donde se encuentra el script, teclear  `ls -l`y checar que el script diga `-rwxr-xr-x` si sólo dice `-rw-r--r--`, entoces debes hacerlo ejecutable con las siguiente línea de comando:
 
 `chmod +x hybpiper_stats.py/` 
+
+
+
+## Referencias
+Bolger, A.M., M. Lohse, and B. Usadel. 2014. Trimmomatic: a flexible trimmer for Illumina sequence data. Bioinformatics [30: 2114–2120](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4103590/pdf/btu170.pdf).
+Fu, Y., N.M. Springer, D.J. Gerhardt, K. Ying, C.T. Yeh, W. Wu, R. Swanson-Wagner, et al. 2010. Repeat subtraction-mediated sequence capture from a complex genome. The Plant Journal  [62:898–909](http://onlinelibrary.wiley.com/doi/10.1111/j.1365-313X.2010.04196.x/epdf).
+Gnirke, A., A. Melnikov, J. Maguire, P. Rogov, E.M. LeProust, W. Brockman, T. Fennell, et al. 2009. Solution hybrid selection with ultra-long oligonucleotides for massively parallel targeted sequencing. Nature Biotechnology [27:182–9](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2663421/pdf/nihms86158.pdf).
+Johnson, M.G., E.M. Gardner, Y. Liu, R. Medina, B. Goffinet, A.J. Shaw, N.J.C. Zerega, and N.J. Wickett. 2016. HybPiper: Extracting coding sequence and introns for phylogenetics from high-throughput sequencing reads using target enrichment. Applications in Plant Sciences [4:1600016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4948903/pdf/apps.1600016.pdf).
+Weitemier, K., S.C.K. Straub, R.C. Cronn, M. Fishbein, R. Schmickl, A. McDonnell, and A. Liston. 2014. Hyb-Seq: Combining target enrichment and genome skimming for plant phylogenomics. Applications in Plant Sciences [2:1400042](http://www.bioone.org/doi/pdf/10.3732/apps.1400042).
 
 
 
