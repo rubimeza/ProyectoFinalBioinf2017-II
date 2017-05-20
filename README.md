@@ -110,7 +110,7 @@ Para realizar el ensamble necesitas:
 3. Script `reads_first.py`
 
 
-### A. reads_first.py
+### A. `reads_first.py`
 
 Para ensamblar las lecturas se utilizó el script `reads_first.py` de la plataforma de Hyb-piper. Este script es un contenedor de varios scripts con dependencias, paquetes ejecutables de Python como: **SPAdes, Velvet, Exonerate, Cap3, BWA y SAMtools**.
 
@@ -134,7 +134,7 @@ Se utiliza el siguiente `for loop`:```while read name; do ../reads_first.py 
 ```
 Una vez que termina de correr el ensamble de secuencias, debes contar con una carpeta para cada muestra como se muestra en la siguiente imagen:
 
-![Results assambly](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/Results%20assambly.jpeg)### B. get seq lengths.py
+![Results assambly](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/Results%20assambly.jpeg)### B. `get seq lengths.py`
 
 Este script se utiliza para resumir todas las longitudes de las lecturas y genera un archivo .txt con todas las muestras. El script imprime una tabla en stdout. La primera línea contiene los nombres de genes. La segunda línea contiene la longitud de las secuencias de referencia. También imprime un WARNING que indica que la longitud de la secuencia es más larga que el 50% respecto a la referencia.
  
@@ -146,14 +146,14 @@ python [get seq lengths.py] [reference] [namelist.txt] dna > [output]
 `python ../get_seq_lengths.py test_target_996_loci.fasta namelist.txt dna > test_seq_lengths.txt`
 
 
-### C. retrieve_sequences.py
+### C. `retrieve_sequences.py`
 
 Este script se utiliza para resumir todas las longitudes de lectura y generar un archivo con una secuencia por muestra en formato FNA para nucleótidos. El script utiliza los datos generados por el script `reads_first.py`. El script está diseñado para recuperar y arreglar todas las secuencias para cada gen en alineamientos ya sea de nucleótidos, aminoácidos, intrones y supercontigs. Para ello se debe indicar el argumento del cual necesitamos recuperar la información.
 
 
 **dna**=**nucleótidos**, **aa**=**péptidos**, **intron**=**intrones**, **supercontig**=**intrones+exones**
 
-### D. paralog_investigator.py
+### D. `paralog_investigator.py`
 
 Este script extrae los resultados exonerados para todos los parálogos completos que compiten y los deposita en un nuevo directorio dentro del directorio de resultados.Los parálogos pueden ser recopilados usando otro script llamado `paralog_retriever.py´ para alinear y construir árboles génicos.
 
@@ -176,7 +176,7 @@ En este caso "i" representa cada gen
 ```while read idoecho $ipython ../paralog_investigator.py $idone < namelist.txt
 ```
 
-### E. paralog_retriever.py
+### E. `paralog_retriever.py`
 
 Este script recupera todos los parálogos completos que se registraron o identificaron de cada uno de los genes por muestra.
 
@@ -205,7 +205,7 @@ Si el ensamblador SPAdes genera múltiples contigs que contienen secuencias de c
 
 
 ### F. Estadísticos
-### hybpiper_stats.py
+### `hybpiper_stats.py`
 
 Este script genera información sobre algunos puntos relevantes sobre el proceso de ensamblaje como:
 
@@ -218,6 +218,44 @@ Debes utilizar el siguiente línea de comando para obtener el resumen de los est
 
 `chmod +x hybpiper_stats.py/` 
 
+## Gráficas
+
+
+### stats.R
+
+Este script de R ejecuta el archivo.txt del resultado de los estadístcos y construye una gráfica de barras. Sólo se debe cargar el archivo y correr la función. 
+
+
+**input** [archivo.txt]
+
+### tree.R
+
+Este script de R utiliza la paquetería de `phytools` para editar un árbol filogenético en formato *.nexus* o *.phylip*. Se debe cargar el árbol para y correr la función. Antes de ejecutar el archivo instalar la paquetería y cargar la librería.
+
+**input** [archivo.nex]
+
+`install.packages(Phytools)`
+
+`library(phytools)`
+
+`install.packages(ape)`
+
+`library(ape)`
+
+
+### heatmap.R
+
+Este script de R utiliza las paqueterías  de `gplots`y `heatmap.plus` para construir un mapa de calor de expresión génica por muestras. El script ejecuta el archivo de salida del resultado de script  `hybpiper_stats.py` en formato.txt.
+
+**input** [archivo.txt]
+
+`install.packages(gplots)`
+
+`library(gplots)`
+
+`install.packages(heatmap.plus)`
+
+`library(heatmap.plus)`
 
 
 ## Referencias
