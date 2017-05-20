@@ -134,7 +134,8 @@ Se utiliza el siguiente `for loop`:```while read name; do ../reads_first.py 
 ```
 Una vez que termina de correr el ensamble de secuencias, debes contar con una carpeta para cada muestra como se muestra en la siguiente imagen:
 
-![Results assambly](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/Results%20assambly.jpeg)### B. `get seq lengths.py`
+![Results assambly](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/Results%20assambly.jpeg)
+### B. `get seq lengths.py`
 
 Este script se utiliza para resumir todas las longitudes de las lecturas y genera un archivo .txt con todas las muestras. El script imprime una tabla en stdout. La primera línea contiene los nombres de genes. La segunda línea contiene la longitud de las secuencias de referencia. También imprime un WARNING que indica que la longitud de la secuencia es más larga que el 50% respecto a la referencia.
  
@@ -144,6 +145,8 @@ python [get seq lengths.py] [reference] [namelist.txt] dna > [output]
 
 **Ejemplo**.
 `python ../get_seq_lengths.py test_target_996_loci.fasta namelist.txt dna > test_seq_lengths.txt`
+
+![alineamientos](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/Seq_length_alingment.jpeg)
 
 
 ### C. `retrieve_sequences.py`
@@ -175,7 +178,7 @@ En este caso "i" representa cada gen
 **Ejemplo**.
 ```while read idoecho $ipython ../paralog_investigator.py $idone < namelist.txt
 ```
-
+![parálogos](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/Paralogs.jpeg)
 ### E. `paralog_retriever.py`
 
 Este script recupera todos los parálogos completos que se registraron o identificaron de cada uno de los genes por muestra.
@@ -214,7 +217,9 @@ Este script genera información sobre algunos puntos relevantes sobre el proceso
 
 Debes utilizar el siguiente línea de comando para obtener el resumen de los estadísticos:
 
-`../hybpiper_stats.py test_target_996_loci.fasta namelist.txt > test_stats_txt`Si el escript no corre debes corroborar que se ejecutable. Tienes que ir a la carpeta donde se encuentra el script, teclear  `ls -l`y checar que el script diga `-rwxr-xr-x` si sólo dice `-rw-r--r--`, entoces debes hacerlo ejecutable con las siguiente línea de comando:
+`../hybpiper_stats.py test_target_996_loci.fasta namelist.txt > test_stats_txt`
+
+Si el escript no corre debes corroborar que se ejecutable. Tienes que ir a la carpeta donde se encuentra el script, teclear  `ls -l`y checar que el script diga `-rwxr-xr-x` si sólo dice `-rw-r--r--`, entoces debes hacerlo ejecutable con las siguiente línea de comando:
 
 `chmod +x hybpiper_stats.py/` 
 
