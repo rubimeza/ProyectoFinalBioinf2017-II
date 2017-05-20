@@ -223,6 +223,10 @@ Debes utilizar el siguiente línea de comando para obtener el resumen de los est
 
 `chmod +x hybpiper_stats.py/` 
 
+Al final debes obtener un archivo.txt como el siguiente:
+
+![stats](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/stats.jpeg)
+
 ## Gráficas
 
 
