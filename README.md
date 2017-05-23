@@ -29,7 +29,7 @@ Contiene los scripts que serán utilizdos para diferentes funciones. Los tres pr
 2. Renombrar secuencias
 3. Descomprimir archivos fastq.gz 
 
-Los escript de R están diseñados para construir un mapa de calor por genes y muestras sobre el % de covertura recuperado, edición del árbol filogenético y una gráfica sobre el número de lecturas por muestra.
+Los escript de R están diseñados para construir un mapa de calor por genes y muestras sobre el % de covertura recuperado, edición del árbol filogenético y una gráfica sobre el número de lecturas por muestra. Ver paquetería en el apartado de Gráficas.
 
 
 
@@ -44,6 +44,42 @@ Los escript de R están diseñados para construir un mapa de calor por genes y m
 
 
 **NOTA**: Es muy importante leer la información del script debido al tipo de archivo de entrada y el cambio de directorio.
+
+### A. `reads_first.py`
+
+Para ensamblar las lecturas se utilizó el script `reads_first.py` de la plataforma de Hyb-piper. Este script es un contenedor de varios scripts con dependencias, paquetes ejecutables de Python como: **SPAdes, Velvet, Exonerate, Cap3, BWA y SAMtools**.
+
+
+Si sólo se desea realizar el ensamble de una sola muestra, se debe convocar al script `reads_first.py` y proporcionar el nombre del archivo con las secuencias de referencia y el nombre de los dos archivos con las salidas pareadas de Trimmomatic. 
+
+
+**Sintaxis**
+
+[reads first.py] -b [reference] -r [input paired.fastq] --prefix [output] --bwa
+
+### B. `get seq lengths.py`
+
+Este script se utiliza para resumir todas las longitudes de las lecturas y genera un archivo .txt con todas las muestras. El script imprime una tabla en stdout. La primera línea contiene los nombres de genes. La segunda línea contiene la longitud de las secuencias de referencia. También imprime un WARNING que indica que la longitud de la secuencia es más larga que el 50% respecto a la referencia.
+ 
+**Sintaxis**
+
+python [get seq lengths.py] [reference] [namelist.txt] dna > [output] 
+
+### C. `retrieve_sequences.py`
+
+Este script se utiliza para resumir todas las longitudes de lectura y generar un archivo con una secuencia por muestra en formato FNA para nucleótidos. El script utiliza los datos generados por el script `reads_first.py`. El script está diseñado para recuperar y arreglar todas las secuencias para cada gen en alineamientos ya sea de nucleótidos, aminoácidos, intrones y supercontigs. Para ello se debe indicar el argumento del cual necesitamos recuperar la información.
+
+
+**dna**=**nucleótidos**, **aa**=**péptidos**, **intron**=**intrones**, **supercontig**=**intrones+exones**
+
+### D. `paralog_investigator.py`
+
+Este script extrae los resultados exonerados para todos los parálogos completos que compiten y los deposita en un nuevo directorio dentro del directorio de resultados.Los parálogos pueden ser recopilados usando otro script llamado `paralog_retriever.py´ para alinear y construir árboles génicos.
+
+### E. `paralog_retriever.py`
+
+Este script recupera todos los parálogos completos que se registraron o identificaron de cada uno de los genes por muestra.
+
 
 Carpeta hard data.
 -
