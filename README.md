@@ -78,7 +78,7 @@ Carpeta out
 
 Archivo wiki
 -
-Puedes revisar el archivo [wiki](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/wiki.md) para seguir el tutorial del análisis.  
+Puedes revisar el archivo [wiki](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/wiki.md) para seguir el tutorial del análisis y saber cual es la sintaxis de algunos scripts, así como los argumentos de cada uno de ellos.
 
 
 
