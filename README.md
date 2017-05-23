@@ -83,6 +83,47 @@ Puedes revisar el archivo [wiki](https://github.com/JR-Montes/ProyectoFinalBioin
 
 
 
+## Gráficas
+
+
+### stats.R
+
+Este script de R ejecuta el archivo.txt del resultado de los estadístcos y construye una gráfica de barras. Sólo se debe cargar el archivo y correr la función. 
+
+
+**input** [archivo.txt]
+
+### tree.R
+
+Este script de R utiliza la paquetería de `phytools` y `ape`para editar un árbol filogenético en formato *.nexus* o *.phylip*. Se debe cargar el árbol para y correr la función. Antes de ejecutar el archivo instalar la paquetería y cargar la librería.
+
+**input** [archivo.nex]
+
+`install.packages(Phytools)`
+
+`library(phytools)`
+
+`install.packages(ape)`
+
+`library(ape)`
+
+
+### heatmap.R
+
+Este script de R utiliza las paqueterías  de `gplots`y `heatmap.plus` para construir un mapa de calor de expresión génica por muestras. El script ejecuta el archivo de salida del resultado de script  `hybpiper_stats.py` en formato.txt.
+
+**input** [archivo.txt]
+
+`install.packages(gplots)`
+
+`library(gplots)`
+
+`install.packages(heatmap.plus)`
+
+`library(heatmap.plus)`
+
+
+
 Referencias
 -
 Bolger, A.M., M. Lohse, and B. Usadel. 2014. Trimmomatic: a flexible trimmer for Illumina sequence data. Bioinformatics [30: 2114–2120](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4103590/pdf/btu170.pdf).
