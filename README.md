@@ -37,7 +37,10 @@ Los escript de R están diseñados para construir un mapa de calor por genes y m
 
 		- 1. gsl_wget_download.sh 
 		- 2. renamed.sh
-		- 3. decompress.sh		- heat_map_stats.R		- phylogenetic_tree.R		- stats.R
+		- 3. decompress.sh
+		- heat_map_stats.R
+		- phylogenetic_tree.R
+		- stats.R
 
 
 **NOTA**: Es muy importante leer la información del script debido al tipo de archivo de entrada y el cambio de directorio.
@@ -59,7 +62,12 @@ En la carpeta hard data se encuentran archivos inputs y outputs que serán neces
 | ---------- | ---------- |---------- |
 |`1045_LociForProbesFasta.fas`|input|Lista de genes de *Pinus taeda* necesaria para contruir el archivo `test_target.fasta`
 |**Conc alignmen n310.nex**| output| Alineamiento concatenado construdo en Geneious para construir el árbol filogenético|
-|`namelist.txt`|input para shell| Archivo con los nombre de las especies||**reads_stats.txt**|input para R| Archivo con los datos del número de lecturas por muestra||**stats.txt**|input para R| Archivo con las estadísticas generales del ensamble, como % de covertura, número de parálogos etc.||`test_seq_lengths.txt`|output de shell| Archivo recuperado con el número de alineamientos por caga gen||`test_target_996_loci.fasta`|input para shell| Archivo de referencia para realizar el ensamble||**tree.nex**|input para R| Árbol filogenético construido con SVD quartets en formato nexus|
+|`namelist.txt`|input para shell| Archivo con los nombre de las especies|
+|**reads_stats.txt**|input para R| Archivo con los datos del número de lecturas por muestra|
+|**stats.txt**|input para R| Archivo con las estadísticas generales del ensamble, como % de covertura, número de parálogos etc.|
+|`test_seq_lengths.txt`|output de shell| Archivo recuperado con el número de alineamientos por caga gen|
+|`test_target_996_loci.fasta`|input para shell| Archivo de referencia para realizar el ensamble|
+|**tree.nex**|input para R| Árbol filogenético construido con SVD quartets en formato nexus|
 
 
 
@@ -70,7 +78,7 @@ Carpeta out
 
 Archivo wiki
 -
-Puedes revisar el archivo [wiki](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/wiki.md) para seguir el tutorial del análisis. 
+Puedes revisar el archivo [wiki](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/wiki.md) para seguir el tutorial del análisis.  
 
 
 
@@ -78,9 +86,13 @@ Puedes revisar el archivo [wiki](https://github.com/JR-Montes/ProyectoFinalBioin
 Referencias
 -
 Bolger, A.M., M. Lohse, and B. Usadel. 2014. Trimmomatic: a flexible trimmer for Illumina sequence data. Bioinformatics [30: 2114–2120](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4103590/pdf/btu170.pdf).
-Fu, Y., N.M. Springer, D.J. Gerhardt, K. Ying, C.T. Yeh, W. Wu, R. Swanson-Wagner, et al. 2010. Repeat subtraction-mediated sequence capture from a complex genome. The Plant Journal  [62:898–909](http://onlinelibrary.wiley.com/doi/10.1111/j.1365-313X.2010.04196.x/epdf).
-Gnirke, A., A. Melnikov, J. Maguire, P. Rogov, E.M. LeProust, W. Brockman, T. Fennell, et al. 2009. Solution hybrid selection with ultra-long oligonucleotides for massively parallel targeted sequencing. Nature Biotechnology [27:182–9](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2663421/pdf/nihms86158.pdf).
-Johnson, M.G., E.M. Gardner, Y. Liu, R. Medina, B. Goffinet, A.J. Shaw, N.J.C. Zerega, and N.J. Wickett. 2016. HybPiper: Extracting coding sequence and introns for phylogenetics from high-throughput sequencing reads using target enrichment. Applications in Plant Sciences [4:1600016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4948903/pdf/apps.1600016.pdf).
-Weitemier, K., S.C.K. Straub, R.C. Cronn, M. Fishbein, R. Schmickl, A. McDonnell, and A. Liston. 2014. Hyb-Seq: Combining target enrichment and genome skimming for plant phylogenomics. Applications in Plant Sciences [2:1400042](http://www.bioone.org/doi/pdf/10.3732/apps.1400042).
+
+Fu, Y., N.M. Springer, D.J. Gerhardt, K. Ying, C.T. Yeh, W. Wu, R. Swanson-Wagner, et al. 2010. Repeat subtraction-mediated sequence capture from a complex genome. The Plant Journal  [62:898–909](http://onlinelibrary.wiley.com/doi/10.1111/j.1365-313X.2010.04196.x/epdf).
+
+Gnirke, A., A. Melnikov, J. Maguire, P. Rogov, E.M. LeProust, W. Brockman, T. Fennell, et al. 2009. Solution hybrid selection with ultra-long oligonucleotides for massively parallel targeted sequencing. Nature Biotechnology [27:182–9](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2663421/pdf/nihms86158.pdf).
+
+Johnson, M.G., E.M. Gardner, Y. Liu, R. Medina, B. Goffinet, A.J. Shaw, N.J.C. Zerega, and N.J. Wickett. 2016. HybPiper: Extracting coding sequence and introns for phylogenetics from high-throughput sequencing reads using target enrichment. Applications in Plant Sciences [4:1600016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4948903/pdf/apps.1600016.pdf).
+
+Weitemier, K., S.C.K. Straub, R.C. Cronn, M. Fishbein, R. Schmickl, A. McDonnell, and A. Liston. 2014. Hyb-Seq: Combining target enrichment and genome skimming for plant phylogenomics. Applications in Plant Sciences [2:1400042](http://www.bioone.org/doi/pdf/10.3732/apps.1400042).
 
 
