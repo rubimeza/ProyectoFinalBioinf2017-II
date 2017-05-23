@@ -45,6 +45,9 @@ Los escript de R están diseñados para construir un mapa de calor por genes y m
 
 **NOTA**: Es muy importante leer la información del script debido al tipo de archivo de entrada y el cambio de directorio.
 
+
+Los script A, B, C, D y E son parte de la plataforma de [HybPiper](https://github.com/mossmatters/HybPiper)
+
 ### A. `reads_first.py`
 
 Para ensamblar las lecturas se utilizó el script `reads_first.py` de la plataforma de Hyb-piper. Este script es un contenedor de varios scripts con dependencias, paquetes ejecutables de Python como: **SPAdes, Velvet, Exonerate, Cap3, BWA y SAMtools**.
