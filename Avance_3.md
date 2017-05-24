@@ -273,7 +273,7 @@ Este script de R utiliza las paqueterías  de `gplots`y `heatmap.plus` para cons
 
 ### tree.R
 
-Finalmente diseñé este script de R que utiliza la paquetería de `phytools` y `ape`para editar un árbol filogenético en formato *.nexus* o *.phylip*. Cargué el árbol y ejecuté la función. Antes de ejecutar el archivo instalé las paqueterías y cargue las librerías. Obtuve lo siguiente:
+Finalmente diseñé este script de R que utiliza las paqueterías de `phytools` y `ape`para editar un árbol filogenético en formato *.nexus* o *.phylip*. Cargué el árbol y ejecuté la función. Antes de ejecutar el archivo instalé las paqueterías y cargué las librerías. Obtuve lo siguiente:
 
 ![tree](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/tree_phylogenetic.jpeg) 
 
