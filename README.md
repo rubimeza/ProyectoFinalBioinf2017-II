@@ -27,20 +27,13 @@ Contiene los scripts que serán utilizdos para diferentes funciones. Los tres pr
 
 1. Descargar las secuencias URL
 2. Renombrar secuencias
-3. Descomprimir archivos fastq.gz 
+3. Descomprimir archivos fastq.gz
+4. stats.R
+5. heat_map_stats.R
+6. phylogenetic_tree.R
 
-Los escript de R están diseñados para construir un mapa de calor por genes y muestras sobre el % de covertura recuperado, edición del árbol filogenético y una gráfica sobre el número de lecturas por muestra. Ver paquetería en el apartado de Gráficas.
+Los escript de R están diseñados para construir un mapa de calor por genes y muestras sobre el % de cobertura recuperado, edición del árbol filogenético y una gráfica sobre el número de lecturas por muestra. Ver paquetería en el apartado de Gráficas.
 
-
-
-
-
-		- 1. gsl_wget_download.sh 
-		- 2. renamed.sh
-		- 3. decompress.sh
-		- heat_map_stats.R
-		- phylogenetic_tree.R
-		- stats.R
 
 
 **NOTA**: Es muy importante leer la información del script debido al tipo de archivo de entrada y el cambio de directorio.
@@ -92,9 +85,7 @@ Se encuentra el archivo.txt que contiene todas las secuencias de illumina de var
 
 Carpeta data.
 -
-
-
-En la carpeta hard data se encuentran archivos inputs y outputs que serán necesarios para correr lo scripts o serán el resultado de corre un script.
+Se encuentran los archivos inputs y outputs que serán necesarios para correr lo scripts o serán el resultado de corre un script.
 
 
 | Archivo| input/output| Descripción|
