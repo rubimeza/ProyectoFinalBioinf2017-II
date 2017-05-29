@@ -108,7 +108,7 @@ Carpeta out
 
 Carpeta Algoritmos
 -
-En esta carpeta se encuentran dos archivos- Archvo Wiki y Algoritmos. Puedes revisar el archivo [wiki](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/wiki.md) para seguir el tutorial del análisis y saber cual es la sintaxis de algunos scripts, así como los argumentos de cada uno de ellos- También puedes revisar el archivo.md de los algoritmos para llevar a cabo el [pre-procesamiento].
+En esta carpeta se encuentran dos archivos- Archvo Wiki y Algoritmos. Puedes revisar el archivo [wiki](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/wiki.md) para seguir el tutorial del análisis y saber cual es la sintaxis de algunos scripts, así como los argumentos de cada uno de ellos- También puedes revisar el archivo.md de los algoritmos para llevar a cabo el pre-procesamiento.
 
 
 
