@@ -152,6 +152,14 @@ Este script de R utiliza las paqueterías  de `gplots`y `heatmap.plus` para cons
 `library(heatmap.plus)`
 
 
+Carpeta Resumen de resultados 
+-
+En esta carpeta se encuentran un archivo.md llamado [Analysis_Results](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/Analysis_Results.md). Que describe los resultados obtenidos en el proyecto. El documento se encuentre en mi repositorio.
+
+
+
+
+
 
 Referencias
 -
