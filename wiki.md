@@ -1,4 +1,5 @@
-### IntroducciónEl enriquecimiento basado en hibridación con RNA (“Hyb-seq”) es un método que permite generar juegos de datos de ADN para estudios filogenómicos. Originalmente fue empleado para enriquecer 1,900 genes codificantes (15,565 exones) en humanos (Gnirke et al. 2009). Casi inmediatamente fue adoptado para maíz (Fu et al. 2010). Una metodología generalizada que emplea Hyb-seq para estudios en la filogenómica de plantas fue descrito por Weitemier et al. (2014) y la plataforma “Hyb-Piper” para el procesamiento de los datos provenientes de Hyb-seq fue presentado por Johnson et al. (2016). En este repositoriO vamos a trabajar con lecturas pareadas de Illumina provenientes de reacciones Hyb-seq en una muestra diversa de especies del género Pinus, realizar una limpieza con base en puntuaciones PHRED, y ensamblar las secuencias mediante la plataforma HybPiper.
+### Introducción
+El enriquecimiento basado en hibridación con RNA (“Hyb-seq”) es un método que permite generar juegos de datos de ADN para estudios filogenómicos. Originalmente fue empleado para enriquecer 1,900 genes codificantes (15,565 exones) en humanos (Gnirke et al. 2009). Casi inmediatamente fue adoptado para maíz (Fu et al. 2010). Una metodología generalizada que emplea Hyb-seq para estudios en la filogenómica de plantas fue descrito por Weitemier et al. (2014) y la plataforma “Hyb-Piper” para el procesamiento de los datos provenientes de Hyb-seq fue presentado por Johnson et al. (2016). En este repositoriO vamos a trabajar con lecturas pareadas de Illumina provenientes de reacciones Hyb-seq en una muestra diversa de especies del género Pinus, realizar una limpieza con base en puntuaciones PHRED, y ensamblar las secuencias mediante la plataforma HybPiper.
 
 
 **Lecturas recomendadas**
@@ -52,8 +53,11 @@ Utilizar la siguiente línea de comandos en la terminal para descargar las secue
 Descargar el script llamado [`Renamed.sh`](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II)para adicionar el nombre de la especie en acrónimo a las secuencias de Illumina 1 y 2. Es este caso cada número corresponde al _forward_ y _reverse_ . Utiliza el comando `mv`para cambiar el nombre. 
 A continuación se muestra un ejemplo del contenido del script. En el ejemplo se puede observar que el nombre de la secuencia ahora cuenta con el acrómino de la especie más el número de colecta. En este caso la muestra es cemb04s1 que corresponde con _Pinus cembroides_ muestra 04 semilla 1.
 
-```mv CACGCANXX_s6_2_MY715-MY527_SL217966.fastq.gz cemd04S1_CACGCANXX_s6_2_MY715-MY527_SL217966.fastq.gz   
-``````mv CACGCANXX_s6_1_MY715-MY527_SL217966.fastq.gz cemd04S1_CACGCANXX_s6_2_MY715-MY527_SL217966.fastq.gz
+```
+mv CACGCANXX_s6_2_MY715-MY527_SL217966.fastq.gz cemd04S1_CACGCANXX_s6_2_MY715-MY527_SL217966.fastq.gz   
+```
+```
+mv CACGCANXX_s6_1_MY715-MY527_SL217966.fastq.gz cemd04S1_CACGCANXX_s6_2_MY715-MY527_SL217966.fastq.gz
 ```
 
 Corre el script `Renamed.sh` en la terminal desde el directorio de trabajo dónde viven las secuencias. Teclea la siguiente línea de comando:
@@ -73,7 +77,8 @@ java -jar [path to trimmomatic jar] PE [input 1] [input 2] [paired output1] [unp
 Ejemplo de la línea de comandos para pre-procesar de secuencias. La especie es _Pinus bungeana_, muestra 03 y semilla 3, acrónimo bung03s3A
 
 
-```java -jar /usr/local/bin/Trimmomatic-0.36/trimmomatic-0.36.jar PE bung03s3A_CACGCANXX_S6_1_MY720-MY544_SL217958.fastq.gz bung03s3A_CACGCANXX_S6_2_MY720-MY544_SL217958.fastq.gz bung03s3A_R1_paired.fastq.gz bung03s3A_R1_unpaired.fastq.gz bung03s3A_R2_paired.fastq.gz bung03s3A_R2_unpaired.fastq.gz LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:30
+```
+java -jar /usr/local/bin/Trimmomatic-0.36/trimmomatic-0.36.jar PE bung03s3A_CACGCANXX_S6_1_MY720-MY544_SL217958.fastq.gz bung03s3A_CACGCANXX_S6_2_MY720-MY544_SL217958.fastq.gz bung03s3A_R1_paired.fastq.gz bung03s3A_R1_unpaired.fastq.gz bung03s3A_R2_paired.fastq.gz bung03s3A_R2_unpaired.fastq.gz LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:30
 ```
 
 
@@ -86,12 +91,23 @@ Utiliza el script `Decompress.sh` para descomprimir todas las secuencias, tanto 
 
 ## Pipeline procesamiento
 
-### 1. Agregar SPAdes a tu path o ruta de trabajo.Comprueba la configuración de ruta antes de comenzar, teclea:
-`echo $PATH`Debe devolver algo como: 
+### 1. Agregar SPAdes a tu path o ruta de trabajo.
 
-`/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/cd-hit`Sin aún no te encuentras en SPAdes hay que agregar el programa a la configuración de ruta. Para conocer el nombre actual de SPAdes, teclea:
-`ls /usr/local/bin/SPA*`En este caso, SPAdes se encuentra en un directorio que se llama SPAdes-3.6.2. En tu caso tendrías que escribir el nombre de directorio donde vive SPAdes. Para este caso se tecleó:
-`export PATH=$PATH:/usr/local/bin/SPAdes-3.6.2`
+Comprueba la configuración de ruta antes de comenzar, teclea:
+
+`echo $PATH`
+
+Debe devolver algo como: 
+
+`/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/cd-hit`
+
+Sin aún no te encuentras en SPAdes hay que agregar el programa a la configuración de ruta. Para conocer el nombre actual de SPAdes, teclea:
+
+`ls /usr/local/bin/SPA*`
+
+En este caso, SPAdes se encuentra en un directorio que se llama SPAdes-3.6.2. En tu caso tendrías que escribir el nombre de directorio donde vive SPAdes. Para este caso se tecleó:
+
+`export PATH=$PATH:/usr/local/bin/SPAdes-3.6.2`
 
 ### 2. Ensamblar secuencias a genoma de referencia.
 
@@ -117,19 +133,27 @@ Si sólo se desea realizar el ensamble de una sola muestra, se debe convocar al 
 [reads first.py] -b [reference] -r [input paired.fastq] --prefix [output] --bwa
 
 **Ejemplo para una sóla muestra**.
-`../reads_first.py -b test_target_996_loci.fasta -r gregDSG1386_R*_paired.fastq --prefix gregDSG1386 --bwa`
+
+`../reads_first.py -b test_target_996_loci.fasta -r gregDSG1386_R*_paired.fastq --prefix gregDSG1386 --bwa`
 
 
 Si quieres realizar un ensamble en más de una muestra, hay que proporcionar el archivo `namelist.txt` con un listado de los nombres de las muestras. 
 
 **Ejemplo para más de una muestra**.
 
-Se utiliza el siguiente `for loop`:```while read name; do ../reads_first.py -b test_target_996_loci.fasta -r "$name*.fastq" --prefix $name --bwa done < namelist.txt
+Se utiliza el siguiente `for loop`:
+
+```
+while read name; 
+do ../reads_first.py -b test_target_996_loci.fasta -r "$name*.fastq" --prefix $name --bwa 
+done < namelist.txt
 ```
 Una vez que termina de correr el ensamble de secuencias, debes contar con una carpeta para cada muestra como se muestra en la siguiente imagen:
 
 ![Results assambly](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/Results%20assambly.jpeg)
-### B. `get seq lengths.py`
+
+
+### B. `get seq lengths.py`
 
 Este script se utiliza para resumir todas las longitudes de las lecturas y genera un archivo .txt con todas las muestras. El script imprime una tabla en stdout. La primera línea contiene los nombres de genes. La segunda línea contiene la longitud de las secuencias de referencia. También imprime un WARNING que indica que la longitud de la secuencia es más larga que el 50% respecto a la referencia.
  
@@ -138,7 +162,8 @@ Este script se utiliza para resumir todas las longitudes de las lecturas y gener
 python [get seq lengths.py] [reference] [namelist.txt] dna > [output] 
 
 **Ejemplo**.
-`python ../get_seq_lengths.py test_target_996_loci.fasta namelist.txt dna > test_seq_lengths.txt`
+
+`python ../get_seq_lengths.py test_target_996_loci.fasta namelist.txt dna > test_seq_lengths.txt`
 
 ![alineamientos](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/Seq_length_alingment.jpeg)
 
@@ -170,7 +195,13 @@ todo lo anterior con los elementos del archivo.txt
 En este caso "i" representa cada gen 
 
 **Ejemplo**.
-```while read idoecho $ipython ../paralog_investigator.py $idone < namelist.txt
+
+```
+while read i
+do
+echo $i
+python ../paralog_investigator.py $i
+done < namelist.txt
 ```
 ![parálogos](https://github.com/JR-Montes/ProyectoFinalBioinf2017-II/blob/master/Paralogs.jpeg)
 ### E. `paralog_retriever.py`
@@ -193,7 +224,13 @@ todo lo anterior con los elementos del archivo.txt
 En este caso "i" representa cada gen 
 
 **Ejemplo**.
-```while read idoecho $ipython ../intronerate.py --prefix $idone < namelist.txt
+
+```
+while read i
+do
+echo $i
+python ../intronerate.py --prefix $i
+done < namelist.txt
 ```
 
 **¿Cómo detecta HybPiper parálogos?**
@@ -207,13 +244,28 @@ Si el ensamblador SPAdes genera múltiples contigs que contienen secuencias de c
 Este script genera información sobre algunos puntos relevantes sobre el proceso de ensamblaje como:
 
 ```
-•	Número de lecturas•	Número de reads ensambladas a la referencia•	Percentaje lecturas ensambladas a la referencia•	Número de genes con lecturas•	Número de genes con contigs•	Número de genes con secuencias•	Número de genes con secuencias > 25% de la longitud de la referencia•	Número de genes con secuencias > 50% de la longitud de la referencia•	Número de genes con secuencias > 75% de la longitud de la referencia•	Número de genes con secuencias > 150% de la longitud de la referencia•	Número de genes con alerta de parálogos```
+•	Número de lecturas
+•	Número de reads ensambladas a la referencia
+•	Percentaje lecturas ensambladas a la referencia
+•	Número de genes con lecturas
+•	Número de genes con contigs
+•	Número de genes con secuencias
+•	Número de genes con secuencias > 25% de la longitud de la referencia
+•	Número de genes con secuencias > 50% de la longitud de la referencia
+
+•	Número de genes con secuencias > 75% de la longitud de la referencia
+
+•	Número de genes con secuencias > 150% de la longitud de la referencia
+•	Número de genes con alerta de parálogos
+```
 
 Debes utilizar el siguiente línea de comando para obtener el resumen de los estadísticos:
 
-`../hybpiper_stats.py test_target_996_loci.fasta namelist.txt > test_stats_txt`
+`../hybpiper_stats.py test_sq_lengts.txt namelist.txt > test_stats_txt`
 
-Si el escript no corre debes corroborar que se ejecutable. Tienes que ir a la carpeta donde se encuentra el script, teclear  `ls -l`y checar que el script diga `-rwxr-xr-x` si sólo dice `-rw-r--r--`, entoces debes hacerlo ejecutable con las siguiente línea de comando:
+
+
+Si el escript no corre debes corroborar que se ejecutable. Tienes que ir a la carpeta donde se encuentra el script, teclear  `ls -l`y checar que el script diga `-rwxr-xr-x` si sólo dice `-rw-r--r--`, entoces debes hacerlo ejecutable con las siguiente línea de comando:
 
 `chmod +x hybpiper_stats.py/` 
 
@@ -262,11 +314,17 @@ Este script de R utiliza las paqueterías  de `gplots`y `heatmap.plus` para cons
 
 
 ## Referencias
-Bolger, A.M., M. Lohse, and B. Usadel. 2014. Trimmomatic: a flexible trimmer for Illumina sequence data. Bioinformatics [30: 2114–2120](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4103590/pdf/btu170.pdf).
-Fu, Y., N.M. Springer, D.J. Gerhardt, K. Ying, C.T. Yeh, W. Wu, R. Swanson-Wagner, et al. 2010. Repeat subtraction-mediated sequence capture from a complex genome. The Plant Journal  [62:898–909](http://onlinelibrary.wiley.com/doi/10.1111/j.1365-313X.2010.04196.x/epdf).
-Gnirke, A., A. Melnikov, J. Maguire, P. Rogov, E.M. LeProust, W. Brockman, T. Fennell, et al. 2009. Solution hybrid selection with ultra-long oligonucleotides for massively parallel targeted sequencing. Nature Biotechnology [27:182–9](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2663421/pdf/nihms86158.pdf).
-Johnson, M.G., E.M. Gardner, Y. Liu, R. Medina, B. Goffinet, A.J. Shaw, N.J.C. Zerega, and N.J. Wickett. 2016. HybPiper: Extracting coding sequence and introns for phylogenetics from high-throughput sequencing reads using target enrichment. Applications in Plant Sciences [4:1600016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4948903/pdf/apps.1600016.pdf).
-Weitemier, K., S.C.K. Straub, R.C. Cronn, M. Fishbein, R. Schmickl, A. McDonnell, and A. Liston. 2014. Hyb-Seq: Combining target enrichment and genome skimming for plant phylogenomics. Applications in Plant Sciences [2:1400042](http://www.bioone.org/doi/pdf/10.3732/apps.1400042).
+
+Bolger, A.M., M. Lohse, and B. Usadel. 2014. Trimmomatic: a flexible trimmer for Illumina sequence data. Bioinformatics [30: 2114–2120](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4103590/pdf/btu170.pdf).
+
+Fu, Y., N.M. Springer, D.J. Gerhardt, K. Ying, C.T. Yeh, W. Wu, R. Swanson-Wagner, et al. 2010. Repeat subtraction-mediated sequence capture from a complex genome. The Plant Journal  [62:898–909](http://onlinelibrary.wiley.com/doi/10.1111/j.1365-313X.2010.04196.x/epdf).
+
+Gnirke, A., A. Melnikov, J. Maguire, P. Rogov, E.M. LeProust, W. Brockman, T. Fennell, et al. 2009. Solution hybrid selection with ultra-long oligonucleotides for massively parallel targeted sequencing. Nature Biotechnology [27:182–9](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2663421/pdf/nihms86158.pdf).
+
+Johnson, M.G., E.M. Gardner, Y. Liu, R. Medina, B. Goffinet, A.J. Shaw, N.J.C. Zerega, and N.J. Wickett. 2016. HybPiper: Extracting coding sequence and introns for phylogenetics from high-throughput sequencing reads using target enrichment. Applications in Plant Sciences [4:1600016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4948903/pdf/apps.1600016.pdf).
+
+Weitemier, K., S.C.K. Straub, R.C. Cronn, M. Fishbein, R. Schmickl, A. McDonnell, and A. Liston. 2014. Hyb-Seq: Combining target enrichment and genome skimming for plant phylogenomics. Applications in Plant Sciences [2:1400042](http://www.bioone.org/doi/pdf/10.3732/apps.1400042).
+
 
 
 
