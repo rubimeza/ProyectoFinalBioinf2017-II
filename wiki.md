@@ -139,6 +139,34 @@ Si sólo se desea realizar el ensamble de una sola muestra, se debe convocar al 
 
 Si quieres realizar un ensamble en más de una muestra, hay que proporcionar el archivo `namelist.txt` con un listado de los nombres de las muestras. 
 
+**Lista de especies**
+
+En la terminal de bash, utilicé `nano`para crear un archivo, que contienen la lista de especies de trabajo, con el nombre de `namelist.txt`, utilizando la siguiente línea de comando:
+
+`nano namelist.txt`
+
+A continuación muestro sólo una parte del contenido del archivo `namelist.txt`:
+
+`less namelist.txt`
+
+```
+arisAL04
+bungAL03
+cemdDRD18
+devoDSG721
+gregDSG1386
+nelsDSG1095
+picchihDSG1070
+pincDSG440
+pineAL06
+strfRG539
+thunAL03
+```
+
+**NOTA**: Evitar hacer la lista de especies en otro programa como: excel, Notepad++, textwrangler, etc. Muchas veces estos programas ocultan caracteres que no permiten que el ensamble o cualquier proceso se ejecute de la manera adecuada. 
+
+Por ejemplo: `arisAL04?` Ésto significa que el programa ejecutó el script pero genera una carpeta vacía que presenta un signo de interrogación al final
+
 **Ejemplo para más de una muestra**.
 
 Se utiliza el siguiente `for loop`:
