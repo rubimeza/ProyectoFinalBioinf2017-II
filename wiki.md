@@ -145,9 +145,7 @@ En la terminal de bash, utilicé `nano`para crear un archivo, que contienen la l
 
 `nano namelist.txt`
 
-A continuación muestro sólo una parte del contenido del archivo `namelist.txt`:
-
-`less namelist.txt`
+A continuación escribe el nombre de los archivos tal cual se encuentran escritos en la secuencias
 
 ```
 arisAL04
@@ -162,6 +160,9 @@ pineAL06
 strfRG539
 thunAL03
 ```
+
+Ahora guarda el archivo con `Ctrl o` entrer y para regresar a la ventana de bash teclea `Ctrl x`
+
 
 **NOTA**: Evitar hacer la lista de especies en otro programa como: excel, Notepad++, textwrangler, etc. Muchas veces estos programas ocultan caracteres que no permiten que el ensamble o cualquier proceso se ejecute de la manera adecuada. 
 
