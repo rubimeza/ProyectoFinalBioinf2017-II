@@ -1,12 +1,6 @@
-## Proyecto Final Bio-informática 2017-II
+## Hybpiper 
 
-## README
-
-###
-
-**By José Rubén Montes Montiel**
-
-Este repositorio contiene información sobre secuenciación masiva Illumina, apuntes, enlaces, lecturas recomendas y código para realizar un ensamble con genoma de referencia de con datos multi-locus de Pinos piñoneros.
+Este repositorio contiene información sobre secuenciación masiva Illumina, apuntes, enlaces, lecturas recomendas y código para realizar un ensamble con genoma de referencia.
 
 
 
